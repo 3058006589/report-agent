@@ -4,12 +4,12 @@ from datetime import datetime
 from openai import OpenAI
 
 
-class MiMoAgent:
+class ReportAgent:
     def __init__(self) -> None:
-        api_key = os.environ.get("MIMO_API_KEY")
+        api_key = os.environ.get("MODEL_API_KEY") or os.environ.get("MIMO_API_KEY")
         if not api_key:
             raise RuntimeError(
-                "未找到环境变量 MIMO_API_KEY。请先运行：$env:MIMO_API_KEY=\"你的API Key\""
+                "未找到环境变量 MODEL_API_KEY。请先运行：$env:MODEL_API_KEY=\"你的API Key\""
             )
 
         self.client = OpenAI(
