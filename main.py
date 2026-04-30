@@ -1,4 +1,4 @@
-from agent import MiMoAgent
+from agent import ReportAgent
 from prompts import build_analysis_prompt, build_draft_prompt, build_revision_prompt
 from reviewer import check_application_text
 
@@ -22,7 +22,7 @@ def main() -> None:
         print("没有输入内容，程序结束。")
         return
 
-    agent = MiMoAgent()
+    agent = ReportAgent()
 
     print("\n第 1 步：分析项目痛点和逻辑流...\n")
     analysis = agent.ask(build_analysis_prompt(user_text), max_tokens=1200)
