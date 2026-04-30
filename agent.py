@@ -17,7 +17,7 @@ class MiMoAgent:
             base_url="https://api.xiaomimimo.com/v1",
         )
 
-    def ask(self, user_prompt: str) -> str:
+    def ask(self, user_prompt: str, max_tokens: int = 1200) -> str:
         completion = self.client.chat.completions.create(
             model="mimo-v2.5-pro",
             messages=[
@@ -30,7 +30,7 @@ class MiMoAgent:
                     "content": user_prompt,
                 },
             ],
-            max_completion_tokens=1200,
+            max_completion_tokens=max_tokens,
             temperature=0.7,
             top_p=0.95,
             stream=False,
