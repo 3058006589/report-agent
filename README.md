@@ -34,7 +34,7 @@ pip install -r requirements.txt
 设置 API Key：
 
 ```powershell
-$env:MIMO_API_KEY="你的API Key"
+$env:MODEL_API_KEY="你的API Key"
 ```
 
 运行：
